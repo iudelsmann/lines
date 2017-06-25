@@ -1,0 +1,35 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "meteor"
+  ],
+  "extends": [
+    "airbnb",
+    "plugin:meteor/recommended"
+  ],
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true,
+    "meteor": true
+  },
+  "import/resolver": "meteor",
+  "rules": {
+    # FIXME resolves import problems for meteor modules
+    "import/no-unresolved": [2, {ignore: ["^meteor/"]}],
+    "import/extensions": 0,
+    "import/no-extraneous-dependencies": 0,
+    "no-new": 0,
+    # Validates JSDocs
+    "valid-jsdoc": ["error", {
+      "requireReturn": false,
+      "prefer": {
+        "returns": "return"
+      }
+    }],
+    "no-underscore-dangle": 0
+  }
+}

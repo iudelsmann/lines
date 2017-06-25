@@ -16,9 +16,9 @@ class LineController {
         return this.Line.find({}, {
           sort: {
             createdAt: 1,
-          }
+          },
         });
-      }
+      },
     });
   }
 
@@ -26,7 +26,7 @@ class LineController {
     const lineToRemove = this.Line.findOne({}, {
       sort: {
         createdAt: 1,
-      }
+      },
     });
 
     if (!_.isNil(lineToRemove)) {

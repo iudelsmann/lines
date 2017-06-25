@@ -3,7 +3,7 @@ import angularMeteor from 'angular-meteor';
 import ngMaterial from 'angular-material';
 
 import LineController from '../imports/ui/components/line/lineController';
-import LineTemplate from '../imports/ui/components/line/lineTemplate';
+import LineTemplate from '../imports/ui/components/line/lineTemplate.html';
 
 angular.module('lines', [
   angularMeteor,
@@ -15,5 +15,5 @@ angular.module('lines', [
   controller: LineController,
   bindings: {
     name: '<',
-  }
+  },
 });
