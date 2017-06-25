@@ -13,4 +13,7 @@ angular.module('lines', [
 .component('line', {
   templateUrl: LineTemplate,
   controller: LineController,
+  bindings: {
+    name: '<',
+  }
 });
