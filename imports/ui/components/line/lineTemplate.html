@@ -5,11 +5,13 @@
     </md-card-title-text>
   </md-card-title>
   <md-card-content>
-    <ul>
-      <li ng-repeat="item in $ctrl.line">
-        {{$index}} - {{item.name}} - {{item.createdAt | date:'short'}}
-      </li>
-    </ul>
+    <md-list>
+      <md-list-item ng-repeat="item in $ctrl.line" ng-click="null">
+        <div class="md-list-item-text">
+          <p>{{$index}} - {{item.name}} - {{item.createdAt | date:'short'}}</p>
+        </div>
+      </md-list-item>
+    </md-list>
   </md-card-content>
   <md-card-actions layout="row" layout-align="end center">
     <md-button>Action 1</md-button>
