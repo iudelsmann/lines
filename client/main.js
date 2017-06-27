@@ -14,6 +14,6 @@ angular.module('lines', [
   templateUrl: LineTemplate,
   controller: LineController,
   bindings: {
-    name: '<',
+    name: '@',
   },
 });

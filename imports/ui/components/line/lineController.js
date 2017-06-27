@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { Mongo } from 'meteor/mongo';
+import Line from '../../../api/line/collection';
 
 class LineController {
   constructor($reactive, $scope) {
@@ -9,11 +9,11 @@ class LineController {
   }
 
   $onInit() {
-    this.Line = new Mongo.Collection(`line_${this.name}`);
-
     this.helpers({
       line() {
-        return this.Line.find({}, {
+        return Line.find({
+          line: this.name,
+        }, {
           sort: {
             createdAt: 1,
           },
@@ -23,14 +23,16 @@ class LineController {
   }
 
   pop() {
-    const lineToRemove = this.Line.findOne({}, {
+    const lineToRemove = Line.findOne({
+      line: this.name,
+    }, {
       sort: {
         createdAt: 1,
       },
     });
 
     if (!_.isNil(lineToRemove)) {
-      this.Line.remove(lineToRemove._id);
+      Line.remove(lineToRemove._id);
     }
   }
 }
