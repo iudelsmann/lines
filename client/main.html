@@ -1,15 +1,11 @@
 <head>
   <title>Lines</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.4/angular-material.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 
-<body>
-  <div ng-app="lines" ng-cloak ng-strict-di>
-    <h1>Filas</h1>
-    <div layout-gt-sm="row">
-    <line name="line0" flex-gt-sm=33></line>
-    <line name="line1" flex-gt-sm=33></line>
-    <line name="line2" flex-gt-sm=33></line>
+<body ng-app="lines" ng-cloak ng-strict-di>
+  <div layout="column" layout-fill>
+    <ui-view layout="column"></ui-view>
   </div>
 </body>

@@ -23,13 +23,7 @@ class LineController {
   }
 
   pop() {
-    const lineToRemove = Line.findOne({
-      line: this.name,
-    }, {
-      sort: {
-        createdAt: 1,
-      },
-    });
+    const lineToRemove = this.line[0];
 
     if (!_.isNil(lineToRemove)) {
       Line.remove(lineToRemove._id);
