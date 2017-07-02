@@ -1,4 +1,5 @@
 import addToLineTemplate from '../addToLine/addToLineTemplate.html';
+import AddToLineController from '../addToLine/addToLineController';
 
 class MainScreenController {
   constructor($mdDialog) {
@@ -10,6 +11,8 @@ class MainScreenController {
   add() {
     this.$mdDialog.show({
       templateUrl: addToLineTemplate,
+      controller: AddToLineController,
+      controllerAs: '$ctrl',
     });
   }
 

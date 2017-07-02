@@ -1,5 +1,5 @@
 <md-dialog flex="30">
-  <form name="itemForm" novalidate ng-submit="$ctrl.add">
+  <form name="itemForm" novalidate ng-submit="itemForm.$valid && $ctrl.confirm()">
     <md-dialog-content class="md-dialog-content" layout="column">
       <h2>Novo item</h2>
       <md-input-container>
@@ -10,20 +10,14 @@
       <md-input-container>
         <label>Fila</label>
         <md-select ng-model="$ctrl.item.line" required>
-          <md-option>
-            teste 1
-          </md-option>
-          <md-option>
-            teste 2
-          </md-option>
-          <md-option>
-            teste 3
+          <md-option ng-repeat="line in $ctrl.lines" ng-value="line.name">
+            {{line.name}}
           </md-option>
         </md-select>
       </md-input-container>
     </md-dialog-content>
     <md-dialog-actions>
-      <md-button class="md-primary">Cancelar</md-button>
+      <md-button ng-click="$ctrl.close()" class="md-primary">Cancelar</md-button>
       <md-button type="submit" class="md-primary">Confirmar</md-button>
     </md-dialog-actions>
   </form>
