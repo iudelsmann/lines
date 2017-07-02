@@ -30,6 +30,7 @@ angular.module('lines', [
     url: '/',
     templateUrl: MainScreenTemplate,
     controller: MainScreenController,
+    controllerAs: '$ctrl',
   });
 
   $urlRouterProvider.otherwise('/');
