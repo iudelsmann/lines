@@ -26,8 +26,8 @@ async function user($q, $state) {
 /**
  * Configures routes using ui-router
  *
- * @param {$stateProvider} $stateProvider
- * @param {$urlRouterProvider} $urlRouterProvider
+ * @param {$stateProvider} $stateProvider injected state provider from ui-router
+ * @param {$urlRouterProvider} $urlRouterProvider injected url router provider from ui-router
  */
 function routes($stateProvider, $urlRouterProvider) {
   'ngInject';

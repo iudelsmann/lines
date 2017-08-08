@@ -1,4 +1,5 @@
 import { Meteor } from 'meteor/meteor';
+import { JsonRoutes } from 'meteor/simple:json-routes';
 
 import '../imports/api/line/collection';
 import '../imports/api/lines/collection';
@@ -8,7 +9,7 @@ Meteor.startup(() => {
 });
 
 // Example of an API route to showcase we can have an api
-JsonRoutes.add("get", "/api/bla", function (req, res, next) {
+JsonRoutes.add('get', '/api/bla', (req, res) => {
   JsonRoutes.sendResult(res, {
     data: {
       bla: 'bla',
