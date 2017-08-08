@@ -9,7 +9,7 @@ import routesConfig from '../imports/ui/config/routesConfig';
 import LineController from '../imports/ui/components/line/lineController';
 import LineTemplate from '../imports/ui/components/line/lineTemplate.html';
 
-
+// Initialize the app
 angular.module('lines', [
     angularMeteor,
     ngMaterial,
@@ -17,6 +17,8 @@ angular.module('lines', [
     ngMessages,
   ])
 
+  // TODO: Move elsewhere
+  // Line compoenent
   .component('line', {
     templateUrl: LineTemplate,
     controller: LineController,
@@ -25,6 +27,7 @@ angular.module('lines', [
     },
   })
 
+  // Adds logout method to rootscope as it will be available anywhere in the app
   .run(($rootScope, $state) => {
     'ngInject';
 

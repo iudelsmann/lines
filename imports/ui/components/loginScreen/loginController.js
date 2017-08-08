@@ -2,7 +2,17 @@ import _ from 'lodash';
 import { Meteor } from 'meteor/meteor';
 import { Accounts } from 'meteor/accounts-base';
 
+/**
+ * Controller for the login screen
+ */
 class LoginController {
+  /**
+   * Creates an instance of LoginController.
+   *
+   * @param {$state} $state ui-router $state service
+   * @param {$mdToast} $mdToast angular material toast service
+   * @param {$log} $log angular $log service
+   */
   constructor($state, $mdToast, $log) {
     'ngInject';
 
@@ -11,6 +21,9 @@ class LoginController {
     this.$log = $log;
   }
 
+  /**
+   * Logs a user in.
+   */
   login() {
     Meteor.loginWithPassword(this.username, this.password, (error) => {
       if (_.isNil(error)) {
@@ -23,6 +36,9 @@ class LoginController {
     });
   }
 
+  /**
+   * Creates a new user.
+   */
   signup() {
     Accounts.createUser({
       username: this.username,
