@@ -2,10 +2,11 @@ import addToLineTemplate from '../addToLine/addToLineTemplate.html';
 import AddToLineController from '../addToLine/addToLineController';
 
 class MainScreenController {
-  constructor($mdDialog) {
+  constructor($mdDialog, user) {
     'ngInject';
 
     this.$mdDialog = $mdDialog;
+    this.user = user;
   }
 
   add() {

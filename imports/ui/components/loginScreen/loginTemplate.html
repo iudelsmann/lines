@@ -1,0 +1,66 @@
+<md-content layout="row" layout-align="space-around" ng-cloak>
+  <md-card flex="flex" flex-gt-sm="50" flex-gt-md="33">
+    <md-toolbar class="md-menu-toolbar">
+      <div layout-align="center center" class="md-toolbar-tools">
+        <h2>Login</h2>
+      </div>
+    </md-toolbar>
+    <!-- Login Form -->
+    <md-card-content>
+      <form name="$ctrl.loginForm" novalidate ng-submit="$ctrl.loginForm.$valid && $ctrl.login()" autocomplete="off">
+        <md-input-container class="md-block">
+          <label>Login</label>
+          <input type="text" name="username" ng-model="$ctrl.username" required />
+          <div ng-messages="$ctrl.loginForm.username.$error" role="alert">
+            <div ng-message="required" class="my-message">Por favor entre com o seu login.</div>
+          </div>
+        </md-input-container>
+        <md-input-container class="md-block">
+          <label>Senha</label>
+          <input type="password" name="password" ng-model="$ctrl.password" required/>
+          <div ng-messages="$ctrl.loginForm.password.$error" role="alert">
+            <div ng-message="required" class="my-message">Por favor entre com sua senha</div>
+          </div>
+        </md-input-container>
+        <md-button type="submit" class="md-raised md-primary">Login</md-button>
+      </form>
+    </md-card-content>
+  </md-card>
+
+  <md-card flex="flex" flex-gt-sm="50" flex-gt-md="33">
+    <md-toolbar class="md-menu-toolbar">
+      <div layout-align="center center" class="md-toolbar-tools">
+        <h2>Cadastre-se</h2>
+      </div>
+    </md-toolbar>
+    <md-card-content>
+      <!-- Signup Form -->
+      <form name="$ctrl.signupForm" novalidate ng-submit="$ctrl.signupForm.$valid && $ctrl.signup()" autocomplete="off">
+        <md-input-container class="md-block">
+          <label>Email</label>
+          <input type="email" name="email" ng-model="$ctrl.email" required />
+          <div ng-messages="$ctrl.signupForm.email.$error" role="alert" multiple="">
+            <div ng-message="email" class="my-message">Email inválido.</div>
+            <div ng-message="required" class="my-message">Por favor entre com seu email.</div>
+          </div>
+        </md-input-container>
+        <md-input-container class="md-block">
+          <label>Login</label>
+          <input type="text" name="username" ng-model="$ctrl.username" required />
+          <div ng-messages="$ctrl.signupForm.username.$error" role="alert">
+            <div ng-message="required" class="my-message">Por favor entre com o seu login.</div>
+          </div>
+        </md-input-container>
+        <md-input-container class="md-block">
+          <label>Senha</label>
+          <input type="password" name="password" ng-model="$ctrl.password" required/>
+          <div ng-messages="$ctrl.signupForm.password.$error" role="alert">
+            <div ng-message="required" class="my-message">Por favor entre com sua senha</div>
+          </div>
+        </md-input-container>
+        <md-button type="submit" class="md-raised md-primary">Cadastrar</md-button>
+      </form>
+    </md-card-content>
+  </md-card>
+
+</md-content>
