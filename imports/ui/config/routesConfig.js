@@ -13,11 +13,12 @@ import LoginTemplate from '../components/loginScreen/loginTemplate.html';
  * @param {$state} $state injected state service from ui-router
  * @return {Promise<User>} a promise that resolves to a user if one is logged in
  */
-function user($q, $state) {
+async function user($q, $state) {
   'ngInject';
 
   if (_.isNil(Meteor.userId())) {
-    return $state.go('login').then(() => $q.reject('AUTH_REQUIRED'));
+    await $state.go('login');
+    return $q.reject('AUTH_REQUIRED');
   }
   return $q.resolve();
 }

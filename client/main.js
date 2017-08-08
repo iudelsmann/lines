@@ -33,8 +33,8 @@ angular.module('lines', [
 
     // eslint-disable-next-line no-param-reassign
     $rootScope.logout = () => {
-      Meteor.logout(() => {
-        $state.go('login');
+      Meteor.logout(async () => {
+        await $state.go('login');
       });
     };
   })
