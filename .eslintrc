@@ -7,7 +7,7 @@
     "meteor"
   ],
   "extends": [
-    "airbnb",
+    "airbnb-base",
     "plugin:meteor/recommended"
   ],
   "env": {
