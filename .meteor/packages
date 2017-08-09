@@ -15,10 +15,11 @@ standard-minifier-js@2.1.0    # JS minifier run for production mode
 es5-shim@4.6.15                # ECMAScript 5 compatibility for older browsers
 shell-server@0.2.3            # Server-side component of the `meteor shell` command
 
-autopublish@1.0.7             # Publish all data to the clients (for prototyping)
 angular-templates
 pbastowski:angular-babel
 accounts-password
 simple:json-routes
 aldeed:collection2-core
 aldeed:schema-index
+alanning:roles
+autopublish

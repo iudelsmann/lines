@@ -2,6 +2,7 @@ import _ from 'lodash';
 import { Meteor } from 'meteor/meteor';
 import { Accounts } from 'meteor/accounts-base';
 
+
 /**
  * Controller for the login screen
  */
@@ -46,6 +47,7 @@ class LoginController {
       password: this.password,
     }, (error) => {
       if (_.isNil(error)) {
+        Meteor.call('addDefaultRoleToUser', {});
         return this.$state.go('lines');
       }
       this.$log.warn('Error creating user');

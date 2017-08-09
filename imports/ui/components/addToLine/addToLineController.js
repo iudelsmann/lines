@@ -10,7 +10,7 @@ class AddToLineController {
 
     this.$mdDialog = $mdDialog;
     this.$mdToast = $mdToast;
-    this.$log = $log
+    this.$log = $log;
 
     $reactive(this).attach($scope);
 

@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 
@@ -23,7 +24,7 @@ Line.allow({
     return !!userId;
   },
   remove(userId) {
-    return !!userId;
+    return userId && _.includes(Meteor.user().roles, 'DOCTOR');
   },
 });
 
