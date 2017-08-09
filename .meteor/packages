@@ -20,3 +20,5 @@ angular-templates
 pbastowski:angular-babel
 accounts-password
 simple:json-routes
+aldeed:collection2-core
+aldeed:schema-index
